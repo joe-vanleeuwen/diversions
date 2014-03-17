@@ -1,0 +1,85 @@
+@import "compass/reset";
+@import "compass/css3/border-radius";
+
+// backgrounds
+$light-blue: #E3F5F8;
+$darker-blue: #58B4DA;
+$orange: #F13B30;
+$border: #DBDFE0;
+
+// text
+$dark-blue: #374C55;
+
+// fonts
+$sans-serif: Helvetica;
+$serif: Helvetica;
+
+@mixin button($background) {
+    color: #FFF;
+    font-size: 18px;
+    padding: 15px 66px;
+    @include border-radius(2px);
+    text-transform: uppercase;
+    text-decoration: none;
+    background: $background;
+
+    &:hover {
+        background: $darker-blue;
+    }
+}
+
+body {
+    font-family: $sans-serif, sans-serif;
+}
+
+.main {
+    width: 79%;
+    box-sizing:border-box;
+        -moz-box-sizing:border-box; /* Firefox */
+    border-right: 1px solid $border;
+    float: left;
+}
+
+.sidebar {
+    width: 21%;
+    height: 100px;
+    background: #FFF;
+    float: right;
+}
+
+.project-intro-wrapper {
+    background: $light-blue;
+}
+
+.project-intro {
+    color: $dark-blue;
+    padding-top: 130px;
+    margin-right: 55px;
+    text-align: center;
+    position: relative;
+
+    h1 {
+        font-size: 98px;
+        font-weight: 100;
+    }
+
+    .synopsis {
+        font-family: $serif;
+        font-style: italic;
+        font-size: 18px;
+        display: block;
+        padding-bottom: 85px;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    a {
+        @include button($orange);
+        position: absolute;
+        bottom: -22px;
+        right: 420px;
+    }
+}
